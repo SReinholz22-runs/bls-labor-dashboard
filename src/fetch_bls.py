@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import datetime
+from datetime import datetime, UTC
 from pathlib import Path
 
 import pandas as pd
@@ -70,7 +70,7 @@ def main():
     series_ids = load_series_ids()
     existing = load_existing()
 
-    today = datetime.utcnow()
+    today = datetime.now(UTC)
     startyear = today.year - 2
     endyear = today.year
 
